@@ -145,10 +145,10 @@ extension ProfileController {
 // MARK: - CollectionView Delegate Flow Layout
 extension ProfileController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        var height: CGFloat = 300
+        var height: CGFloat = 350
         
         if user.bio != nil {
-            height += 50
+            height += 70
         }
         return CGSize(width: view.frame.width, height: height)
     }

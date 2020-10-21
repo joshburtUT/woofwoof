@@ -23,14 +23,16 @@ class EditProfileCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        label.adjustsFontForContentSizeCategory = true
         label.textColor = .myTitleLabelColor
         return label
     }()
     lazy var infoTextField: UITextField = {
         let tf = UITextField()
         tf.borderStyle = .none
-        tf.font = UIFont.systemFont(ofSize: 20)
+        tf.font = UIFont.preferredFont(forTextStyle: .body)
+        tf.adjustsFontForContentSizeCategory = true
         tf.textAlignment = .left
         tf.textColor = .myButtonColor
         tf.addTarget(self, action: #selector(handleUpdateUserInfo), for: .editingDidEnd)
@@ -38,7 +40,8 @@ class EditProfileCell: UITableViewCell {
     }()
     let bioTextView: InputTextView = {
         let tv = InputTextView()
-        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.font = UIFont.preferredFont(forTextStyle: .body)
+        tv.adjustsFontForContentSizeCategory = true
         tv.textColor = .myBackgroundColor
         tv.placeholderLabel.text = "Bio"
         return tv

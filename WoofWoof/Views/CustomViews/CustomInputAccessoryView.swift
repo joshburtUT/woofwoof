@@ -20,7 +20,10 @@ class CustomInputAccessoryView: UIView {
     private lazy var messageInputTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .myBackgroundColor
-        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.font = UIFont.preferredFont(forTextStyle: .body)
+        tv.adjustsFontForContentSizeCategory = true
+        tv.font = UIFont.preferredFont(forTextStyle: .body)
+        tv.adjustsFontForContentSizeCategory = true
         tv.textColor = .label
         tv.isScrollEnabled = false
         return tv
@@ -28,7 +31,7 @@ class CustomInputAccessoryView: UIView {
     private lazy var sendButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Send", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(.myButtonColor, for: .normal)
         button.addTarget(self, action: #selector(handleSendButtonTapped), for: .touchUpInside)
         return button
@@ -36,7 +39,8 @@ class CustomInputAccessoryView: UIView {
     private let placeholderLabel: UILabel = {
         let label = UILabel()
         label.text = "Enter Message"
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.adjustsFontForContentSizeCategory = true
         label.textColor = .lightGray
         return label
     }()

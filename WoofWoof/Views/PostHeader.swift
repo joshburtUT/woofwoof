@@ -46,13 +46,15 @@ class PostHeader: UICollectionReusableView {
     }()
     private let fullnameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.adjustsFontForContentSizeCategory = true
         label.textColor = .myTitleLabelColor
         return label
     }()
     private let usernameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.adjustsFontForContentSizeCategory = true
         label.textColor = .myDetailLabelColor
         return label
     }()
@@ -68,7 +70,8 @@ class PostHeader: UICollectionReusableView {
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .myDetailLabelColor
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .left
         return label
     }()
@@ -80,7 +83,8 @@ class PostHeader: UICollectionReusableView {
     private let replyLabel: ActiveLabel = {
         let label = ActiveLabel()
         label.textColor = .lightGray
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        label.adjustsFontForContentSizeCategory = true
         label.mentionColor = .darkGreen
         // TODO: implement hashtags
         label.hashtagColor = .darkGreen

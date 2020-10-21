@@ -40,7 +40,8 @@ class Utilities {
         tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.textColor = .white
-        tf.font = UIFont.systemFont(ofSize: 16)
+        tf.font = UIFont.preferredFont(forTextStyle: .body)
+        tf.adjustsFontForContentSizeCategory = true
         tf.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
         return tf
     }
@@ -48,7 +49,7 @@ class Utilities {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: firstPart, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
                                                                                         NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        attributedTitle.append(NSAttributedString(string: secondPart, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
+        attributedTitle.append(NSAttributedString(string: secondPart, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18),
                                                                                    NSAttributedString.Key.foregroundColor: UIColor.white]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
