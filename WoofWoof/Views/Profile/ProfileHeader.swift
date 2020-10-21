@@ -43,17 +43,11 @@ class ProfileHeader: UICollectionReusableView {
         button.addTarget(self, action: #selector(handleDismissal), for: .touchUpInside)
         return button
     }()
-    private lazy var profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.setDimensions(width: 80, height: 80)
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.backgroundColor = .lightGray
-        iv.layer.borderColor = UIColor.white.cgColor
-        iv.layer.borderWidth = 4
-        iv.layer.cornerRadius = 80 / 2
+    private lazy var profileImageView: CircularImageView = {
+        let iv = CircularImageView(width: 80)
         return iv
     }()
+
     lazy var editProfileFollowButton: UIButton = {
         let button = UIButton(type: .system)
         button.setDimensions(width: 100, height: 36)

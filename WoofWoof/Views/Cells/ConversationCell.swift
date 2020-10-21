@@ -14,14 +14,8 @@ class ConversationCell: UITableViewCell {
     var conversation: Conversation? {
         didSet { configure() }
     }
-    private let profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.setDimensions(width: 50, height: 50)
-        iv.layer.cornerRadius = 50 / 2
-        iv.layer.borderWidth = 1.25
-        iv.layer.borderColor = UIColor.myButtonColor.cgColor
+    private let profileImageView: CircularImageView = {
+        let iv = CircularImageView(width: 50)
         return iv
     }()
     private let timestampLabel: UILabel = {

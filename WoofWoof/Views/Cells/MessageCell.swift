@@ -18,15 +18,8 @@ class MessageCell: UICollectionViewCell {
     var bubbleLeftAnchor: NSLayoutConstraint!
     var bubbleRightAnchor: NSLayoutConstraint!
     
-    private let profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.backgroundColor = .lightGray
-        iv.contentMode = .scaleAspectFill
-        iv.setDimensions(width: 40, height: 40)
-        iv.layer.cornerRadius = 40 / 2
-        iv.layer.borderWidth = 1.25
-        iv.layer.borderColor = UIColor.myButtonColor.cgColor
-        iv.clipsToBounds = true
+    private let profileImageView: CircularImageView = {
+        let iv = CircularImageView(width: 40)
         return iv
     }()
     private let textView: UITextView = {

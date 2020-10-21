@@ -16,15 +16,8 @@ class UserCell: UITableViewCell {
         didSet { configureUserCell() }
     }
     
-    private lazy var profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.setDimensions(width: 40, height: 40)
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.layer.cornerRadius = 40 / 2
-        iv.layer.borderWidth = 1.25
-        iv.layer.borderColor = UIColor.myButtonColor.cgColor
-        iv.backgroundColor = .darkGreen
+    private lazy var profileImageView: CircularImageView = {
+        let iv = CircularImageView(width: 48)
         return iv
     }()
     private let usernameLabel: UILabel = {

@@ -29,16 +29,9 @@ class PostHeader: UICollectionReusableView {
         didSet { configurePost() }
     }
     
-    private lazy var profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.setDimensions(width: 48, height: 48)
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.layer.cornerRadius = 48 / 2
-        iv.layer.borderColor = UIColor.white.cgColor
-        iv.layer.borderWidth = 2.0
-        iv.backgroundColor = .darkGreen
-        
+    private lazy var profileImageView: CircularImageView = {
+        let iv = CircularImageView(width: 48)
+       
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
         iv.addGestureRecognizer(tap)
         iv.isUserInteractionEnabled = true

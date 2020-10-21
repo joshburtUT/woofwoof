@@ -19,16 +19,9 @@ class EditProfileHeader: UIView {
     
     private let user: UserModel
     
-    let profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.backgroundColor = .lightGray
-        iv.layer.borderColor = UIColor.white.cgColor
-        iv.layer.borderWidth = 3
-        iv.setDimensions(width: 100, height: 100)
-        iv.layer.cornerRadius = 100 / 2
-        return iv
+    let profileImageView: CircularImageView = {
+        let iv = CircularImageView(width: 100)
+       return iv
     }()
     private lazy var changePhotoButton: UIButton = {
         let button = UIButton(type: .system)

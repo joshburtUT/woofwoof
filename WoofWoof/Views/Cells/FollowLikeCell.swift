@@ -17,15 +17,8 @@ class FollowLikeCell: UITableViewCell {
         didSet { configureUser() }
     }
     
-    private lazy var profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.setDimensions(width: 48, height: 48)
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.layer.cornerRadius = 48 / 2
-        iv.layer.borderWidth = 1.25
-        iv.layer.borderColor = UIColor.myButtonColor.cgColor
-        iv.backgroundColor = .darkGreen
+    private lazy var profileImageView: CircularImageView = {
+        let iv = CircularImageView(width: 48)
         return iv
     }()
     private let usernameLabel: UILabel = {
