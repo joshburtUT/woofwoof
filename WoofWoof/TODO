@@ -1,0 +1,17 @@
+
+Complete @mention
+Complete #hashtags
+Share Post
+Add Dynamic Type to NSAttributedString
+Check for duplication of notification for follow/unfollow/follow & like/unlike/like
+Fix Functionality of Follow Button on Notifications & invert the color style based on the state of follow
+Add Tap Gesture to all Profile Images
+Fix SearchVC configuration for new message / search
+Add Block User functionality
+Setup actions for Edit& Report & Delete & Block User 
+Clean up Auth Validation
+Validate that a profile image has been selected
+Fix Edit Profile Functionality
+Add ability to upload media as a post
+Add PullRefresh to Feed
+Add a refresh feed when user unfollows someone with a childRemove listener

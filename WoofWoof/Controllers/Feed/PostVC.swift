@@ -159,7 +159,7 @@ extension PostVC: PostHeaderDelegate {
 
 // MARK: - Action Sheet Launcher Delegate
 extension PostVC: ActionSheetLauncherDelegate {
-    // TODO: Setup actions for Report & Delete & Block User
+    // TODO: Setup actions for Edit& Report & Delete & Block User 
     func didSelect(option: ActionSheetOptions) {
         switch option {
         case .follow(let user):
