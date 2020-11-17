@@ -220,8 +220,8 @@ class PostHeader: UICollectionReusableView {
         
         let actionStack = UIStackView(arrangedSubviews: [commentButton,
                                                          retweetButton,
-                                                         likeButton,
-                                                         shareButton])
+                                                         likeButton])
+//                                                         shareButton])
         actionStack.spacing = 72
         
         addSubview(actionStack)

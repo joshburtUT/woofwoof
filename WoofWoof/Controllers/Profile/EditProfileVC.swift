@@ -203,6 +203,12 @@ extension EditProfileController: EditProfileFooterDelegate {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(logoutAction)
         alert.addAction(cancelAction)
+        
+        if let popoverPresentationController = alert.popoverPresentationController {
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.size.height - 80, width: 0.0, height: 0.0)
+            popoverPresentationController.permittedArrowDirections = []
+        }
         present(alert, animated: true, completion: nil)
     }
 }
