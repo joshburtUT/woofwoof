@@ -144,7 +144,6 @@ class SignupController: UIViewController, Alertable {
         } catch let error {
             fatalError("JOSH: Error saving password to Keychain with - \(error.localizedDescription)")
         }
-
     }
     
     // MARK: - Selectors
@@ -153,6 +152,7 @@ class SignupController: UIViewController, Alertable {
     }
     @objc func handleSignup() {
         do {
+            shouldPresentLoadingView(true)
             let email = try emailTextField.validatedText(validationType: ValidatorType.email)
             let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
 //            guard let password = passwordTextField.text else { return }
@@ -177,11 +177,13 @@ class SignupController: UIViewController, Alertable {
                 
                 self.saveUserCredentials(email: email, password: password)
                 print("JOSH: Saved User Credentials -- Email is \(email) & Password is \(password)")
-                
+                self.shouldPresentLoadingView(false)
             }) { (signupError) in
+                self.shouldPresentLoadingView(false)
                 self.showAlert(withTitle: "Error", andMessage: signupError!)
             }
         } catch (let error) {
+            self.shouldPresentLoadingView(false)
             showAlert(withTitle: "Oops", andMessage: (error as! ValidationError).message)
         }
 

@@ -32,7 +32,8 @@ class MessageCell: UICollectionViewCell {
     private let textView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
-        tv.font = .systemFont(ofSize: 16)
+        tv.font = UIFont.preferredFont(forTextStyle: .body)
+        tv.adjustsFontForContentSizeCategory = true
         tv.isScrollEnabled = false
         tv.isEditable = false
         tv.textColor = .label

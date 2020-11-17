@@ -45,20 +45,22 @@ class PostCell: UICollectionViewCell {
     }()
     private let captionLabel: ActiveLabel = {
         let label = ActiveLabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 0
-//        label.mentionColor = .lightGreen
+        label.mentionColor = .systemGreen
         // TODO: implement hashtags
-//        label.hashtagColor = .lightGreen
+//        label.hashtagColor = .systemGreen
         return label
     }()
     private let replyLabel: ActiveLabel = {
         let label = ActiveLabel()
         label.textColor = .lightGray
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.mentionColor = .darkGreen
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.adjustsFontForContentSizeCategory = true
+        label.mentionColor = .systemGreen
         // TODO: implement hashtags
-        label.hashtagColor = .darkGreen
+//        label.hashtagColor = .systemGreen
         return label
     }()
     
@@ -147,13 +149,12 @@ class PostCell: UICollectionViewCell {
         
         replyLabel.isHidden = true
         
-        infoLabel.font = UIFont.systemFont(ofSize: 16)
         infoLabel.textColor = .myTitleLabelColor
         
         let actionStack = UIStackView(arrangedSubviews: [commentButton,
                                                          retweetButton,
-                                                         likeButton,
-                                                         shareButton])
+                                                         likeButton])
+//                                                         shareButton])
         actionStack.spacing = 72
         addSubview(actionStack)
         actionStack.centerX(inView: self)

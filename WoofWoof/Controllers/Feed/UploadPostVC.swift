@@ -22,7 +22,7 @@ class UploadController: UIViewController, Alertable {
         let button = UIButton(type: .system)
         button.backgroundColor = .darkGreen
         button.titleLabel?.textAlignment = .center
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.setTitleColor(.white, for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 64, height: 32)
         button.layer.cornerRadius = 32 / 2
@@ -55,7 +55,8 @@ class UploadController: UIViewController, Alertable {
     
     private let characterCountLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        label.adjustsFontForContentSizeCategory = true
         label.textColor = .lightGray
         label.textAlignment = .right
         return label

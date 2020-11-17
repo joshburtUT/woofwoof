@@ -139,16 +139,20 @@ extension ProfileController {
         let controller = PostVC(post: currentDataSource[indexPath.row])
         navigationController?.pushViewController(controller, animated: true)
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+    }
+
 }
 
 
 // MARK: - CollectionView Delegate Flow Layout
 extension ProfileController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        var height: CGFloat = 300
+        var height: CGFloat = 350
         
         if user.bio != nil {
-            height += 50
+            height += 70
         }
         return CGSize(width: view.frame.width, height: height)
     }

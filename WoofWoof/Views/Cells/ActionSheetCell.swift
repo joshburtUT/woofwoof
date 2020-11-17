@@ -24,7 +24,8 @@ class ActionSheetCell: UITableViewCell {
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.adjustsFontForContentSizeCategory = true
         label.textColor = .white
         return label
     }()

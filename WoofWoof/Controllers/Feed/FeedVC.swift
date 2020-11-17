@@ -43,9 +43,9 @@ class FeedController: UICollectionViewController {
     
     
     // MARK: - API
-    // Need to reverse the posts array...cannot use .reversed() on the posts
     func fetchPosts() {
         // FIXME: Refresh Control Need to Begin
+//        collectionView.refreshControl?.beginRefreshing()
         PostService.fetchPosts { (posts) in
             // FIXME: Refresh Control Nedd to End
             // Need to set the closure posts to the class posts
@@ -54,6 +54,7 @@ class FeedController: UICollectionViewController {
             self.posts = posts.sorted(by: { $0.timestamp > $1.timestamp })
             // Then check if the user has liked any posts...needs to happen after the array has been sorted to match the correct UI vs Array Index
             self.checkIfUserLikedPost()
+            self.collectionView.refreshControl?.endRefreshing()
         }
     }
     func checkIfUserLikedPost() {
@@ -74,13 +75,14 @@ class FeedController: UICollectionViewController {
     func configureUI() {
         configureNavBar()
         configureCollectionView()
+        configureRefreshControl()
         configureActionButtonUI()
     }
     func configureNavBar() {
         let imageView = UIImageView(image: UIImage(named: "logo"))
         imageView.contentMode = .scaleAspectFill
         imageView.setDimensions(width: 50, height: 50) // need to prevent the image from shifting when the profileImage is added
-        configureNavigationBar(withTitle: nil, orWithImageView: imageView, prefersLargeTitles: true)
+        configureNavigationBar(withTitle: nil, orWithImageView: imageView, prefersLargeTitles: false)
     }
     func configureLeftBarButton() {
         guard let user = user else { return }
@@ -107,9 +109,14 @@ class FeedController: UICollectionViewController {
         
         collectionView.register(PostCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
+//        let refreshControl = UIRefreshControl()
+//        collectionView.refreshControl = refreshControl
+//        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+    }
+    func configureRefreshControl() {
         let refreshControl = UIRefreshControl()
-        collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
     }
     func configureActionButtonUI() {
         view.addSubview(actionButton)

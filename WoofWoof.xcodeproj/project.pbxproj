@@ -15,6 +15,7 @@
 		E723B70D253FCD41000C7A08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E723B70C253FCD41000C7A08 /* Assets.xcassets */; };
 		E723B710253FCD41000C7A08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E723B70E253FCD41000C7A08 /* LaunchScreen.storyboard */; };
 		E723B718253FCD57000C7A08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E723B717253FCD57000C7A08 /* GoogleService-Info.plist */; };
+		E76545002540F8380029D25F /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = E76544FF2540F8380029D25F /* TODO */; };
 		E7763725253FCEAF0049C934 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7763724253FCEAF0049C934 /* MainTabBarController.swift */; };
 		E7763730253FCF5A0049C934 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E776372F253FCF5A0049C934 /* UserModel.swift */; };
 		E7763733253FCF630049C934 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7763732253FCF630049C934 /* Alertable.swift */; };
@@ -91,6 +92,7 @@
 		E723B70F253FCD41000C7A08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E723B711253FCD41000C7A08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E723B717253FCD57000C7A08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E76544FF2540F8380029D25F /* TODO */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		E7763724253FCEAF0049C934 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E776372F253FCF5A0049C934 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E7763732253FCF630049C934 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				E723B70E253FCD41000C7A08 /* LaunchScreen.storyboard */,
 				E723B711253FCD41000C7A08 /* Info.plist */,
 				E723B717253FCD57000C7A08 /* GoogleService-Info.plist */,
+				E76544FF2540F8380029D25F /* TODO */,
 			);
 			path = WoofWoof;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E723B710253FCD41000C7A08 /* LaunchScreen.storyboard in Resources */,
+				E76545002540F8380029D25F /* TODO in Resources */,
 				E723B718253FCD57000C7A08 /* GoogleService-Info.plist in Resources */,
 				E723B70D253FCD41000C7A08 /* Assets.xcassets in Resources */,
 				E723B70B253FCD3F000C7A08 /* Main.storyboard in Resources */,
@@ -749,6 +753,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WoofWoof/WoofWoof.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FHT9A47FG6;
 				INFOPLIST_FILE = WoofWoof/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -769,6 +774,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WoofWoof/WoofWoof.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FHT9A47FG6;
 				INFOPLIST_FILE = WoofWoof/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

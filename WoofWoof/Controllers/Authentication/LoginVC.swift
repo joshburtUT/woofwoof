@@ -113,7 +113,6 @@ class LoginVC: UIViewController, Alertable {
         
         view.addSubview(biometricButton)
         biometricButton.centerX(inView: view, topAnchor: stackView.bottomAnchor, paddingTop: 20)
-//        biometricButton.setDimensions(width: 100, height: 100)
         
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor,
@@ -160,14 +159,17 @@ class LoginVC: UIViewController, Alertable {
     // MARK: - Selectors
     @objc func handleLogin() {
         do {
+            shouldPresentLoadingView(true)
             let email = try emailTextField.validatedText(validationType: ValidatorType.email)
             //let password = try passwordTextField.validatedText(validationType: ValidatorType.password)
             guard let password = passwordTextField.text else { return }
             authenticateUserWith(email: email, password: password)
-            
+            shouldPresentLoadingView(false)
         } catch (let error) {
+            shouldPresentLoadingView(false)
             showAlert(withTitle: "Oops", andMessage: (error as! ValidationError).message)
         }
+        shouldPresentLoadingView(false)
     }
     @objc func handleShowSignup() {
         let controller = SignupController()

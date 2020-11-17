@@ -42,11 +42,13 @@ struct PostViewModel {
         return attributedText(withValue: post.likes, text: "Likes")
     }
 
+    // TODO: Add Dynamic Type for NSAttributedString
     var userInfoText: NSAttributedString {
-        let title = NSMutableAttributedString(string: user.fullname, attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        title.append(NSAttributedString(string: " @\(user.username)", attributes: [.font: UIFont.systemFont(ofSize: 16),
+        let title = NSMutableAttributedString(string: user.fullname, attributes: [.font: UIFont.boldSystemFont(ofSize: 18),
+                                                                                  .foregroundColor: UIColor.myTitleLabelColor])
+        title.append(NSAttributedString(string: " @\(user.username)", attributes: [.font: UIFont.systemFont(ofSize: 18),
                                                                                    .foregroundColor: UIColor.lightGray]))
-        title.append(NSAttributedString(string: " • \(self.timestamp)", attributes: [.font: UIFont.systemFont(ofSize: 16),
+        title.append(NSAttributedString(string: " • \(self.timestamp)", attributes: [.font: UIFont.systemFont(ofSize: 14),
                                                                                    .foregroundColor: UIColor.lightGray]))
         return title
     }
@@ -76,8 +78,9 @@ struct PostViewModel {
     
     // MARK: - Helpers
     fileprivate func attributedText(withValue value: Int, text: String) -> NSAttributedString {
-        let attributedTitle = NSMutableAttributedString(string: "\(value)", attributes: [.font : UIFont.boldSystemFont(ofSize: 16)])
-        attributedTitle.append(NSAttributedString(string: " \(text)", attributes: [.font : UIFont.systemFont(ofSize: 16),
+        let attributedTitle = NSMutableAttributedString(string: "\(value)", attributes: [.font : UIFont.boldSystemFont(ofSize: 16),
+                                                                                         .foregroundColor: UIColor.myTitleLabelColor])
+        attributedTitle.append(NSAttributedString(string: " \(text)", attributes: [.font : UIFont.systemFont(ofSize: 14),
                                                                                    .foregroundColor : UIColor.lightGray]))
         return attributedTitle
     }
