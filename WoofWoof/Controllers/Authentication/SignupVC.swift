@@ -10,7 +10,6 @@ import UIKit
 
 class SignupController: UIViewController, Alertable {
     
-    
     // MARK: - Properties
     private var profileImage: UIImage?
     private let addProfileButtonSize: CGFloat = 100
@@ -161,10 +160,9 @@ class SignupController: UIViewController, Alertable {
             let username = try usernameTextField.validatedText(validationType: ValidatorType.username)
 
             
-            // TODO: remove whitespaces & lines & symbols for username
 //            guard let username = usernameTextField.text?.lowercased() else { return }
-            let trimmedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .symbols).trimmingCharacters(in: .punctuationCharacters)
-//
+            let trimmedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .symbols)
+            
             guard let profileImage = self.profileImage else { return }
             
             let credentials = AuthCredentials(email: email, password: password, fullname: fullname, username: trimmedUsername, profileImage: profileImage)
